@@ -12,9 +12,6 @@ public class BlockyGame {
     
     private int lockCounter;
     
-     //Array to hold all the pieces in an array
-    private PieceKind[] pieces = {PieceKind.I, PieceKind.J, PieceKind.L, PieceKind.O, PieceKind.S, PieceKind.T,PieceKind.Z};
-    //int to keep track of which piece to return next
     
     public BlockyGame() {
         board = new Board();
@@ -25,7 +22,7 @@ public class BlockyGame {
     
     private void trySpawnBlock() {
         if (activePiece == null) {
-            activePiece = new Piece(PieceKind.I, new Position(Constants.BOARD_HEIGHT - 1, Constants.BOARD_WIDTH / 2 - 2));
+            activePiece = new Piece(PieceKind.I, new Position(2, Constants.BOARD_WIDTH / 2 - 2));
             if (board.collides(activePiece)) {
                 System.exit(0);
             }
@@ -52,7 +49,7 @@ public class BlockyGame {
     }
     
     private void processGravity() {
-        Position nextPos = activePiece.getPosition().add(-1, 0);
+        Position nextPos = activePiece.getPosition().add(1, 0);
         if (!board.collides(activePiece.getLayout(), nextPos)) {
             lockCounter = 0;
             activePiece.moveTo(nextPos);
