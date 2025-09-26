@@ -12,6 +12,10 @@ public class BlockyGame {
     
     private int lockCounter;
     
+     //Array to hold all the pieces in an array
+    private PieceKind[] pieces = {PieceKind.I, PieceKind.J, PieceKind.L, PieceKind.O, PieceKind.S, PieceKind.T,PieceKind.Z};
+    //int to keep track of which piece to return next
+    
     public BlockyGame() {
         board = new Board();
         movement = Direction.NONE;
