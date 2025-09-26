@@ -16,7 +16,7 @@ public class BlockyGame {
     //Array to hold all the pieces in an array
     private PieceKind[] pieces = {PieceKind.I, PieceKind.J, PieceKind.L, PieceKind.O, PieceKind.S, PieceKind.T,PieceKind.Z};
     //int to keep track of which piece to return next
-    private int piecesIterator = 0;
+    private int piecesIterator = 7;
 
     //Return the next piece in line, if all 7 have been returned shuffle and return the first piece in list.
     private PieceKind pickPiece(){
@@ -25,6 +25,7 @@ public class BlockyGame {
             shuffle(pieces);
             piecesIterator = 0;
             ret = pieces[piecesIterator];
+            piecesIterator++;
         } else{
             ret = pieces[piecesIterator];
             piecesIterator++;
