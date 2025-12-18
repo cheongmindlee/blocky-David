@@ -18,6 +18,7 @@ Primary developer: David Lee, Aidan Michaelson
 
 ## Changelog
 
+- Fixed weird edge case where active piece was null
 - Fixed rotation
 - Fixed game crashing error when block moves to far right
 - Fixed Array out of index error
