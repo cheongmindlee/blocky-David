@@ -128,12 +128,15 @@ public class BlockyGame {
 
     /**
      * Should rotate the piece if there is no collision
+     * 
      * @param dir
      */
     public void rotatePiece(boolean dir) {
-        activePiece.rotate(dir);
-        if (board.collides(activePiece)) {
-            activePiece.rotate(!dir);
+        if (activePiece != null) {
+            activePiece.rotate(dir);
+            if (board.collides(activePiece)) {
+                activePiece.rotate(!dir);
+            }
         }
     }
 }
